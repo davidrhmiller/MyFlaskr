@@ -50,7 +50,7 @@ def get_db():
 
 
 @app.teardown_appcontext
-def close_db():
+def close_db(error):
     """Closes the database again at the end of the request."""
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
@@ -96,3 +96,5 @@ def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
     return redirect(url_for('show_entries'))
+
+app.run()
