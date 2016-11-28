@@ -1,3 +1,4 @@
+# Copied from the Flaskr tutorial
 # all the imports
 import os
 import sqlite3
